@@ -1,0 +1,197 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+    font-family: 'Segoe UI', sans-serif;
+    padding: 20px;
+}
+
+/* Trang trí đầu & cuối */
+.decor-top,
+.decor-bottom {
+    font-size: 26px;
+    opacity: 0.8;
+    margin-bottom: 12px;
+    animation: float 4s infinite ease-in-out;
+}
+
+.decor-bottom {
+    margin-top: 14px;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(6px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.card-container {
+    width: 360px;
+    height: 520px;
+    perspective: 1200px;
+}
+
+.card {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.9s ease;
+    cursor: pointer;
+    border-radius: 20px;
+}
+
+.card:hover {
+    transform: scale(1.02);
+}
+
+.card.flipped {
+    transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 20px;
+    padding: 35px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* HOẠ TIẾT GÓC */
+.corner-decor,
+.corner-decor-back {
+    position: absolute;
+    font-size: 34px;
+    opacity: 0.9;
+}
+
+.corner-decor.left {
+    top: 15px;
+    left: 15px;
+}
+
+.corner-decor.right {
+    top: 15px;
+    right: 15px;
+}
+
+.corner-decor-back.left {
+    bottom: 15px;
+    left: 15px;
+}
+
+.corner-decor-back.right {
+    bottom: 15px;
+    right: 15px;
+}
+
+/* Dòng hoa */
+.flower-line,
+.flower-line-back {
+    font-size: 22px;
+    margin: 12px 0;
+}
+
+/* Mặt trước */
+.card-front {
+    background: linear-gradient(135deg, #ffb6b9 0%, #fae3e3 100%);
+    color: #7b0a0a;
+    box-shadow: 0 18px 40px rgba(255, 91, 91, 0.3);
+}
+
+.title {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    letter-spacing: 1px;
+}
+
+.tagline {
+    font-size: 16px;
+    margin-top: 10px;
+    font-style: italic;
+    opacity: 0.9;
+}
+
+/* Mặt sau */
+.card-back {
+    background: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%);
+    color: #1f3c5a;
+    transform: rotateY(180deg);
+    box-shadow: 0 18px 40px rgba(0, 112, 255, 0.25);
+}
+
+.message {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.signature {
+    font-size: 16px;
+    font-style: italic;
+    opacity: 0.8;
+}
+
+.instruction {
+    position: absolute;
+    bottom: 18px;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.55);
+}
+
+/* Ribbon góc */
+.ribbon {
+    position: absolute;
+    top: 18px;
+    left: -8px;
+    padding: 8px 22px;
+    background: #7b0a0a;
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 4px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.ribbon::before {
+    content: "";
+    position: absolute;
+    right: -10px;
+    top: 0;
+    width: 0;
+    height: 0;
+    border-left: 10px solid #7b0a0a;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+}
